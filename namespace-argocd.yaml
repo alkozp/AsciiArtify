@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: "2023-11-26T11:44:49Z"
+  labels:
+    kubernetes.io/metadata.name: argocd
+  name: argocd
+  resourceVersion: "1222"
+  uid: 8c013c42-c439-4707-a494-532f82c45ebf
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active
