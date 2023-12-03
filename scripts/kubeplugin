@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Before using plugin use "chmod +x kubeplugin" to make script executable
+# Copy/move plugin to your PATH. You can find your PATH with command "echo $PATH"
+# Usage: kubectl kubeplugin <resource type> <namespace> 
+# Example: kubectl kubeplugin node kube-system
+
+# Define command-line arguments
+
+RESOURCE_TYPE=$1
+NAMESPACE=$2
+
+
+# Retrieve resource usage statistics from Kubernetes
+kubectl top $RESOURCE_TYPE --namespace $NAMESPACE | tail -n +2 | while read line
+
+do
+  # Extract CPU and memory usage from the output
+  NAME=$(echo $line | awk '{print $1}')
+  CPU=$(echo $line | awk '{print $2}')
+  MEMORY=$(echo $line | awk '{print $3}')
+
+  # Output the statistics to the console
+  # "Resource, Namespace, Name, CPU, Memory"
+  echo $RESOURCE_TYPE $NAMESPACE $NAME $CPU $MEMORY
+done
+#!/bin/bash
+
+# Before using plugin use "chmod +x kubeplugin" to make script executable
+# Copy/move plugin to your PATH. You can find your PATH with command "echo $PATH"
+# Usage: kubectl kubeplugin <resource type> <namespace> 
+# Example: kubectl kubeplugin node kube-system
+
+# Define command-line arguments
+
+RESOURCE_TYPE=$1
+NAMESPACE=$2
+
+
+# Retrieve resource usage statistics from Kubernetes
+kubectl top $RESOURCE_TYPE --namespace $NAMESPACE | tail -n +2 | while read line
+
+do
+  # Extract CPU and memory usage from the output
+  NAME=$(echo $line | awk '{print $1}')
+  CPU=$(echo $line | awk '{print $2}')
+  MEMORY=$(echo $line | awk '{print $3}')
+
+  # Output the statistics to the console
+  # "Resource, Namespace, Name, CPU, Memory"
+  echo $RESOURCE_TYPE $NAMESPACE $NAME $CPU $MEMORY
+done
