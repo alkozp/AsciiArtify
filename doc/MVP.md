@@ -1,6 +1,6 @@
 # Демо створення додатку у ArgoCD та налаштування автоматичної сінхронізації
 
-Для прикладу - посилання на Git репозітарій додатка: [https://github.com/alkozp/go-demo-app ](https://github.com/alkozp/go-demo-app )
+Для прикладу - посилання на Git репозітарій додатка:[https://github.com/den-vasyliev/go-demo-app](https://github.com/den-vasyliev/go-demo-app) або для тестування налаштувань kubernetes - [https://github.com/alkozp/go-demo-app ](https://github.com/alkozp/go-demo-app ) 
 
 ## Налаштування ArgoCD
 
